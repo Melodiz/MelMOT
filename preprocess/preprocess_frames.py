@@ -9,7 +9,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
 # Initialize YOLO model with verbose=False
-yolo = YOLO('models/yolo11n.pt').to(device)
+yolo = YOLO('models/yolo11x.pt').to(device)
 yolo.conf = 0.35  # Set confidence threshold
 yolo.verbose = False  # Disable verbose output
 

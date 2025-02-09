@@ -6,6 +6,7 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 import json
+import argparse
 
 def sliding_window_pipeline(video_path, output_path, window_size=300, A_initial_frames=600):
     cap = cv2.VideoCapture(video_path)
@@ -64,6 +65,10 @@ def track_objects_wrapper(frames, detections):
     return all_tracks, processed_frames, tracklets
 
 if __name__ == "__main__":
-    video_path = 'videos/huge_tsum.mp4'
-    output_path = 'results/sliding_window_output.mp4'
-    sliding_window_pipeline(video_path, output_path)
+    parser = argparse.ArgumentParser(description="Run sliding window pipeline for object tracking")
+    parser.add_argument("--video_path", type=str, default='videos/huge_tsum.mp4', help="Path to the input video file")
+    parser.add_argument("--output_path", type=str, default='results/sliding_window_output.mp4', help="Path to save the output video file")
+    
+    args = parser.parse_args()
+    
+    sliding_window_pipeline(args.video_path, args.output_path)

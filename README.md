@@ -1,1 +1,3 @@
 in progress...
+
+python main.py --video_path /path/to/your/input/video.mp4 --output_path /path/to/your/output/video.mp4
