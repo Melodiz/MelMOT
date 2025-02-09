@@ -1,0 +1,6 @@
+**__pycache__**
+checkpoints/
+**archive**
+**.mp4
+**.DS_Store**
+results/
