@@ -1,0 +1,1 @@
+python main.py --video_path videos/3235.mp4 --output_path results/3235_out.mp4
