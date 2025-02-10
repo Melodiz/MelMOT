@@ -80,8 +80,8 @@ def visualize_tracklets(video_path, tracklet_file, output_path, play_video_after
         play_video(output_path, speed=2)
 
 if __name__ == "__main__":
-    video_path = 'videos/tsum_test.mp4'
-    tracklet_file = 'results/tsum_test_traks.json'
-    output_path = 'results/tracklets_visualization.mp4'
+    video_path = 'videos/3235.mp4'
+    tracklet_file = 'results/3235_traks.json'
+    output_path = 'videos/3235_out.mp4'
     frame_offset = 0  # Adjust this value if needed
-    visualize_tracklets(video_path, tracklet_file, output_path, play_video_after=True, frame_offset=frame_offset)
+    visualize_tracklets(video_path, tracklet_file, output_path, play_video_after=False, frame_offset=frame_offset)
