@@ -4,3 +4,11 @@ checkpoints/
 **.mp4
 **.DS_Store**
 results/
+models/
+reid/
+outputs/
+features/
+gallery_images/
+CLIP-ReID
+videos/
+env/
