@@ -5,10 +5,10 @@ checkpoints/
 **.DS_Store**
 results/
 models/
-stuff/
 reid/
 outputs/
-gallery_images/
-env/
 features/
+gallery_images/
+CLIP-ReID
 videos/
+env/

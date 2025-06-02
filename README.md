@@ -1,3 +1,2 @@
-in progress...
-
-python main.py --video_path /path/to/your/input/video.mp4 --output_path /path/to/your/output/video.mp4
+python main.py --video_path videos/simple_1.mov --tra
+cklets_path results/ssimp_1.json --model_index m
