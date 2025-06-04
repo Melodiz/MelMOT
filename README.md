@@ -156,6 +156,11 @@ The fundamental approach for this intra-camera ReID post-processing is analogous
     This appearance-based re-linking strategy is adopted due to its demonstrated effectiveness in challenging ReID scenarios and its relative simplicity for this post-processing stage. The underlying assumption is that even if the online tracker loses an identity due to prolonged occlusion, the appearance features extracted upon re-detection should be sufficiently similar to those captured before occlusion. The effectiveness of the learned appearance features (from OSNet) in distinguishing identities is illustrated in Figure 1. The t-SNE visualization shows that feature embeddings for the same individual (represented by a unique color) tend to form distinct clusters, separated from the clusters of other individuals. This clear separation in the feature space supports the viability of using appearance similarity to correctly re-cluster or re-link track fragments that were erroneously assigned different IDs by the online tracker.
     For now, this basic visual ReID approach is employed without additional complex heuristics for the intra-camera ID switch correction, relying on the strength of the feature embeddings. Future work could explore incorporating motion continuity or short-term spatio-temporal predictions as additional cues to further refine the re-linking decisions.
 
+## Research Paper
+
+The complete research paper can be accessed via the following link:
+* [Innovative Approaches to Multi-User Tracking in Retail Spaces (PDF)](https://drive.google.com/file/d/1r1hOHQpZdUl5fumM93CqdrHqX0_uswO0/view?usp=drive_link)
+
 
 ## Code Description
 
