@@ -1,0 +1,54 @@
+# MelMOT Configuration for Retail Mall
+# This file configures the multi-camera tracking and Re-ID system
+
+# Camera configuration
+cameras:
+  - id: "entrance_cam"
+    position: [0.0, 0.0, 3.5]  # x, y, height in meters
+    video_path: "videos/entrance.mp4"
+    output_path: "results/entrance_tracked.mp4"
+    homography: "homography/entrance_cam.json"
+    
+  - id: "main_floor_cam"
+    position: [15.0, 0.0, 3.5]
+    video_path: "videos/main_floor.mp4"
+    output_path: "results/main_floor_tracked.mp4"
+    homography: "homography/main_floor_cam.json"
+    
+  - id: "checkout_cam"
+    position: [30.0, 0.0, 3.5]
+    video_path: "videos/checkout.mp4"
+    output_path: "results/checkout_tracked.mp4"
+    homography: "homography/checkout_cam.json"
+
+# Tracking configuration
+tracking:
+  model_path: "yolov12n.pt"
+  device: "auto"  # cpu, cuda, or auto
+  max_age: 100
+  min_hits: 3
+  iou_threshold: 0.3
+  static_threshold: 2.0
+  movement_threshold: 0.1
+  confidence_threshold: 0.5
+
+# Re-ID configuration
+reid:
+  appearance_threshold: 0.8
+  spatial_tolerance: 0.5  # meters
+  temporal_window: 5.0    # seconds
+  homography_enabled: true
+  appearance_enabled: true
+
+# Output configuration
+output:
+  global_trajectories: "results/global_trajectories.json"
+  tracklets_dir: "results/tracklets"
+  statistics: "results/statistics.json"
+
+# Processing configuration
+processing:
+  batch_size: 32
+  num_workers: 4
+  save_intermediate: true
+  verbose: true

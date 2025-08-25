@@ -1,0 +1,48 @@
+# Example Configuration for MelMOT
+# Copy this file and modify it for your own setup
+
+# Camera configuration
+cameras:
+  - id: "camera_001"
+    position: [0.0, 0.0, 3.5]  # x, y, height in meters
+    video_path: "path/to/your/video1.mp4"
+    output_path: "results/camera_001_tracked.mp4"
+    homography: "homography/camera_001.json"
+    
+  - id: "camera_002"
+    position: [10.0, 0.0, 3.5]
+    video_path: "path/to/your/video2.mp4"
+    output_path: "results/camera_002_tracked.mp4"
+    homography: "homography/camera_002.json"
+
+# Tracking configuration
+tracking:
+  model_path: "yolov12n.pt"  # Will download automatically
+  device: "auto"  # cpu, cuda, or auto
+  max_age: 100
+  min_hits: 3
+  iou_threshold: 0.3
+  static_threshold: 2.0
+  movement_threshold: 0.1
+  confidence_threshold: 0.5
+
+# Re-ID configuration
+reid:
+  appearance_threshold: 0.8
+  spatial_tolerance: 0.5  # meters
+  temporal_window: 5.0    # seconds
+  homography_enabled: true
+  appearance_enabled: true
+
+# Output configuration
+output:
+  global_trajectories: "results/global_trajectories.json"
+  tracklets_dir: "results/tracklets"
+  statistics: "results/statistics.json"
+
+# Processing configuration
+processing:
+  batch_size: 32
+  num_workers: 4
+  save_intermediate: true
+  verbose: true
