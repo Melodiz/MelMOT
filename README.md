@@ -6,19 +6,7 @@ A research project implementing innovative approaches to multi-user tracking in 
 
 ## Abstract
 
-This research presents **MelMOT**, a comprehensive multi-object tracking system designed for retail environments that addresses the critical challenge of maintaining consistent person identities across multiple surveillance cameras. The system implements innovative approaches to both single-camera multiple object tracking (MOT) and cross-camera person re-identification (Re-ID), enabling continuous trajectory construction for every visitor throughout their entire mall visit.
-
-**Key Innovations:**
-- **Advanced Post-Processing Heuristics**: Novel algorithms for phantom track removal and manikin misclassification filtering, significantly reducing false positive tracks
-- **Robust Spatiotemporal Matching**: Homography-based coordinate alignment using an exponential loss function for similarity scoring in challenging scenarios
-- **Multi-Stage Re-ID Process**: Intelligent combination of geometric constraints and appearance-based matching with fallback mechanisms
-- **Real-Time Performance**: Optimized pipeline achieving 30 FPS processing while maintaining tracking accuracy
-
-**Technical Approach:**
-The system leverages state-of-the-art YOLOv12 for object detection, BoT-SORT for robust online tracking, and OSNet for appearance feature extraction. Post-processing heuristics address common MOT failures, while the cross-camera Re-ID system employs homography transformations to establish spatial consistency across camera views.
-
-**Applications:**
-The generated trajectories enable comprehensive customer behavior analysis, including conversion tracking, behavioral pattern recognition, high-interest area identification, and business intelligence insights. This research contributes to both the theoretical understanding of multi-camera tracking and practical applications in retail analytics.
+This research details the development of an innovative system for continuous multi-user tracking within retail environments, focusing on robust single-camera tracking and effective cross-camera re-identification (Re-ID). A key contribution for single-camera tracking is the application of tailored post-processing heuristics addressing phantom tracks and manikin misclassifications to a state-of-the-art pipeline (YOLOv12, BoT-SORT, OSNet). The primary innovation lies in the cross-camera Re-ID methodology, which overcomes the limitations of appearance-only approaches in challenging retail settings. This is achieved through a robust spatiotemporal matching strategy utilizing homography to establish a common ground plane for coordinate-based comparisons. A novel exponential loss function is introduced for similarity scoring, significantly improving matching accuracy, particularly in scenarios with partial occlusions or non-ideal detections. The system architecture proposes a multi-stage matching process, where spatiotemporal constraints primarily guide Re-ID, with aggregated appearance features from multiple confirmed views providing a fallback mechanism, ensuring high accuracy and stability in generating comprehensive visitor trajectories.
 
 ## Project Overview
 
